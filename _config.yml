@@ -1,0 +1,65 @@
+# Configuration du site GitHub Pages
+title: "Aazyris - Développeur Web"
+description: "Portfolio de Aazyris, développeur web passionné créant des expériences numériques modernes et innovantes."
+url: "https://aazyris.github.io"
+baseurl: ""
+
+# Thème
+theme: jekyll-theme-minimal
+
+# Paramètres SEO
+keywords: "développeur web, portfolio, aazyris, javascript, react, node.js, python"
+author: "Aazyris"
+lang: fr
+
+# Réseaux sociaux
+github_username: aazyris
+twitter_username: aazyris
+linkedin_username: aazyris
+
+# Paramètres du site
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclusions
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+
+# Paramètres de build
+incremental: false
+profile: true
+
+# Configuration Jekyll SEO Tag
+twitter:
+  username: aazyris
+  card: summary
+
+social:
+  name: Aazyris
+  links:
+    - https://github.com/aazyris
+    - https://twitter.com/aazyris
+    - https://linkedin.com/in/aazyris
+
+# Google Analytics (optionnel)
+# google_analytics: UA-XXXXXXXX-X
+
+# Configuration des pages
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+      author: "Aazyris"
