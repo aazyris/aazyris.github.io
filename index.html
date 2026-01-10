@@ -26,8 +26,13 @@
                     <span id="visual-text"></span><span class="blinker" id="search-blinker" style="height: 40px; width: 18px;"></span>
                 </div>
                 <div id="menu-container">
-                    <button class="btn-social" id="settings-btn"><i class="fa-solid fa-gear"></i> Settings</button>
-                    <button id="lua-btn" class="lua-btn"><i class="fa-solid fa-code"></i> LUA</button>
+                    <button id="menu-toggle" class="menu-toggle" aria-label="Menu">
+                        <span class="menu-bars"><span></span><span></span><span></span></span>
+                    </button>
+                    <div id="menu-actions" class="menu-actions">
+                        <button id="lua-btn" class="menu-action-btn"><i class="fa-solid fa-code"></i> LUA</button>
+                        <button id="social-btn" class="menu-action-btn"><i class="fa-solid fa-user-group"></i> Social</button>
+                    </div>
                     <div class="social-links" id="social-links">
                         <a href="#" class="btn-social" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>
                         <a href="#" class="btn-social" target="_blank"><i class="fa-brands fa-telegram"></i> Telegram</a>
@@ -40,15 +45,6 @@
     </div>
 
     <button id="start-btn" style="border-radius: 10px;">CONNECT</button>
-
-    <div id="script-request-window">
-        <div class="request-header">Request New Script</div>
-        <div class="request-body">
-            <input type="text" class="request-input" id="script-name" placeholder="Script Name...">
-            <textarea class="request-input" id="script-desc" rows="3" placeholder="Description..."></textarea>
-            <button class="request-btn" id="send-request">Send Request</button>
-        </div>
-    </div>
 
     <div class="lua-console" id="lua-console">
         <div class="lua-header">
@@ -70,6 +66,8 @@
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs/loader.min.js" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/monaco-editor@0.45.0/min/vs/loader.min.js';"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js';"></script>
     <script src="script.js"></script>
 </body>
 </html>
