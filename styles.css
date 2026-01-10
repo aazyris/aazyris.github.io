@@ -1,0 +1,271 @@
+/* --- LUA BUTTON --- */
+.lua-btn {
+    padding: 12px 25px;
+    background: transparent;
+    border: 1px solid #333;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 11px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.lua-btn:hover { background: #fff; color: #000; }
+
+/* Window resize animation */
+.cursor-window.resizing {
+    transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 400px !important;
+    height: 250px !important;
+    transform: scale(0.8) !important;
+}
+
+.cursor-window.lua-console-style {
+    background: rgba(10, 10, 10, 0.98) !important;
+    border: 1px solid #222 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.9) !important;
+}
+
+.cursor-window.rotate-180 {
+    transform: scale(0.8) rotateY(180deg) !important;
+    transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.cursor-window.fullscreen { 
+    width: 100vw !important; 
+    height: 100vh !important; 
+    border-radius: 0 !important; 
+    border: none !important; 
+    transform: scale(1) rotateY(0deg) !important;
+    top: 0 !important;
+    left: 0 !important;
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.lua-console {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 620px;
+    height: 380px;
+    background: rgba(10, 10, 10, 0.98);
+    border: 1px solid #222;
+    border-radius: 8px;
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.9);
+    overflow: hidden;
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    z-index: 999;
+    display: none;
+    perspective: 1200px;
+}
+
+.lua-console.rotate-180 { 
+    transform: translate(-50%, -50%) rotateY(180deg); 
+}
+
+.lua-console.fullscreen { 
+    width: 100vw; 
+    height: 100vh; 
+    border-radius: 0; 
+    border: none; 
+    transform: translate(-50%, -50%) scale(1) !important;
+    top: 50%;
+    left: 50%;
+}
+
+.lua-header {
+    background: #151515;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #222;
+}
+
+.dots { display: flex; gap: 8px; }
+.dot { width: 11px; height: 11px; border-radius: 50%; opacity: 0.7; }
+.red { background: #ff5f56; }
+.orange { background: #ffbd2e; }
+.green { background: #27c93f; }
+.lua-title { color: #444; font-size: 11px; letter-spacing: 1px; }
+
+.lua-body { padding: 30px; height: calc(100% - 35px); color: #fff; position: relative; }
+
+.lua-prompt { color: #00f2ff; margin-right: 10px; font-weight: bold; }
+
+.blinker {
+    display: inline-block;
+    width: 12px; height: 24px;
+    background: #fff;
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+.terminal-line { margin-bottom: 8px; font-size: 14px; }
+.ok { color: #27c93f; }
+
+.lua-body { 
+    padding: 30px; 
+    height: calc(100% - 35px); 
+    color: #fff; 
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+}
+
+.lua-prompt { color: #00f2ff; margin-right: 10px; font-weight: bold; }
+
+/* Loading Bar Styles */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+}
+
+.loading-bar {
+    width: 80%;
+    height: 8px;
+    background: #333;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.loading-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #007acc, #005a9e);
+    border-radius: 4px;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.loading-text {
+    color: #888;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- SCROLLBAR CUSTOM --- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #050505; }
+::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #444; }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: #050505;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Consolas', 'Monaco', monospace;
+    perspective: 1200px;
+}
+
+/* --- FENÊTRE TERMINAL --- */
+.cursor-window {
+    width: 620px;
+    height: 380px;
+    background: rgba(10, 10, 10, 0.98);
+    border: 1px solid #222;
+    border-radius: 8px;
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.9);
+    overflow: hidden;
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transform-style: preserve-3d;
+    z-index: 10;
+}
+
+.cursor-window.active { transform: scale(1.08) rotateX(0deg) rotateY(0deg) !important; }
+
+.cursor-header {
+    background: #151515;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #222;
+}
+
+.dots { display: flex; gap: 8px; }
+.dot { width: 11px; height: 11px; border-radius: 50%; opacity: 0.7; }
+.red { background: #ff5f56; }
+.orange { background: #ffbd2e; }
+.green { background: #27c93f; }
+.cursor-title { color: #444; font-size: 11px; letter-spacing: 1px; }
+
+.cursor-body { padding: 30px; height: calc(100% - 35px); color: #fff; position: relative; }
+
+/* --- PROMPT & CURSEUR --- */
+.prompt-static { color: #00f2ff; margin-right: 10px; font-weight: bold; }
+.blinker {
+    display: inline-block;
+    width: 12px; height: 24px;
+    background: #fff;
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* --- RECHERCHE --- */
+#search-container { display: none; width: 100%; height: 100%; align-items: center; justify-content: center; flex-direction: column; gap: 40px; }
+.search-display-area { position: relative; min-width: 100px; border-bottom: 2px solid #fff; padding: 10px 20px; text-align: center; transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+#visual-text { font-size: 2.5rem; color: #fff; letter-spacing: 2px; }
+#hidden-input { position: absolute; opacity: 0; pointer-events: none; }
+.submitted { border-bottom-color: transparent !important; transform: translateY(-35vh) scale(0.6); }
+
+/* --- MENU SETTINGS --- */
+#menu-container { display: flex; flex-direction: column; align-items: center; gap: 20px; transition: 0.6s; }
+.hide-menu { opacity: 0; pointer-events: none; }
+.btn-social { background: transparent; border: 1px solid #333; color: #fff; padding: 12px 25px; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; font-size: 11px; transition: 0.3s; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.btn-social:hover { background: #fff; color: #000; }
+.social-links { display: none; gap: 15px; animation: fadeIn 0.5s forwards; }
+
+/* --- FENÊTRE SCRIPT REQUEST --- */
+#script-request-window {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 300px;
+    background: #0a0a0a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+    display: none;
+    flex-direction: column;
+    z-index: 100;
+    animation: slideUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.request-header { background: #151515; padding: 10px; border-bottom: 1px solid #222; font-size: 10px; color: #666; text-transform: uppercase; letter-spacing: 1px; }
+.request-body { padding: 15px; display: flex; flex-direction: column; gap: 10px; }
+.request-input { background: #111; border: 1px solid #222; padding: 8px; color: #fff; font-family: inherit; font-size: 12px; outline: none; }
+.request-btn { background: #fff; border: none; padding: 8px; font-family: inherit; font-size: 10px; cursor: pointer; font-weight: bold; text-transform: uppercase; }
+
+/* --- BOUTON CONNECT --- */
+#start-btn { margin-top: 50px; padding: 12px 50px; background: transparent; border: 1px solid #333; color: #888; cursor: pointer; text-transform: uppercase; letter-spacing: 4px; transition: 0.4s; border-radius: 25px; }
+#start-btn:hover { border-color: #fff; background: #fff; color: #000; }
+#start-btn.hide { opacity: 0; pointer-events: none; }
+
+.terminal-line { margin-bottom: 8px; font-size: 14px; }
+.ok { color: #27c93f; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(100px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
