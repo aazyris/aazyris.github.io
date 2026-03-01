@@ -1305,21 +1305,29 @@ if (socialBtn) {
 }
 
 // --- NEW BUTTONS FUNCTIONALITY ---
-if (elliotBtn) {
-    elliotBtn.addEventListener('click', (e) => {
+console.log('Elliot btn:', elliotBtn);
+console.log('Mirfayel btn:', mirfayelBtn);
+
+// Gestionnaire de clic unique pour tout
+document.addEventListener('click', (e) => {
+    // Gestion des nouveaux boutons
+    if (e.target.id === 'elliot-btn' || e.target.closest('#elliot-btn')) {
+        e.preventDefault();
         e.stopPropagation();
+        console.log('Elliot button clicked!');
         window.location.href = 'elliot-mirfayel.html?page=elliot';
-    });
-}
-
-if (mirfayelBtn) {
-    mirfayelBtn.addEventListener('click', (e) => {
+        return;
+    }
+    
+    if (e.target.id === 'mirfayel-btn' || e.target.closest('#mirfayel-btn')) {
+        e.preventDefault();
         e.stopPropagation();
+        console.log('Mirfayel button clicked!');
         window.location.href = 'elliot-mirfayel.html?page=mirfayel';
-    });
-}
-
-document.addEventListener('click', () => {
+        return;
+    }
+    
+    // Gestion existante du menu
     if (menuActions && menuActions.classList.contains('open')) {
         menuActions.classList.remove('open');
         socialLinks.style.display = 'none';

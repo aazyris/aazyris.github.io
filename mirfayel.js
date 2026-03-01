@@ -1,38 +1,4 @@
-let currentPage = null;
-
-// Gérer l'URL pour afficher la bonne page
-document.addEventListener('DOMContentLoaded', function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const page = urlParams.get('page');
-    
-    if (page === 'elliot') {
-        showPage('elliot-page');
-    } else if (page === 'mirfayel') {
-        // Rediriger vers la page Mirfayel séparée
-        window.location.href = 'mirfayel.html';
-    } else {
-        // Page par défaut si non spécifié
-        showPage('elliot-page');
-    }
-});
-
-function showPage(pageId) {
-    hideAllPages();
-    const page = document.getElementById(pageId);
-    if (page) {
-        page.style.display = 'flex';
-        page.classList.add('show');
-        currentPage = pageId;
-    }
-}
-
-function hideAllPages() {
-    const pages = document.querySelectorAll('.content-page');
-    pages.forEach(page => {
-        page.style.display = 'none';
-        page.classList.remove('show');
-    });
-}
+let currentPage = 'mirfayel';
 
 function returnToMain() {
     window.location.href = 'index.html';
@@ -51,7 +17,7 @@ function toggleDownloadMenu() {
 
 function downloadAs(format) {
     const content = document.querySelector('.page-content').innerText;
-    const filename = currentPage === 'elliot-page' ? 'elliot' : 'mirfayel';
+    const filename = 'mirfayel';
     
     switch(format) {
         case 'pdf':
@@ -62,10 +28,10 @@ function downloadAs(format) {
             downloadTextFile(content, `${filename}.docx`);
             break;
         case 'latex':
-            downloadTextFile(`\\documentclass{article}\n\\usepackage[utf8]{inputenc}\n\\usepackage[T1]{fontenc}\n\\title{${filename.charAt(0).toUpperCase() + filename.slice(1)}}\n\\author{Document généré}\n\\date{\\today}\n\n\\begin{document}\n\n\\maketitle\n\n${content.replace(/\n/g, '\n\n')}\n\n\\end{document}`, `${filename}.tex`);
+            downloadTextFile(`\\documentclass{article}\n\\usepackage[utf8]{inputenc}\n\\usepackage[T1]{fontenc}\n\\title{Rapport de Stage - Animation périscolaire}\n\\author{Mirfayel}\n\\date{\\today}\n\n\\begin{document}\n\n\\maketitle\n\n${content.replace(/\n/g, '\n\n')}\n\n\\end{document}`, `${filename}.tex`);
             break;
         case 'markdown':
-            downloadTextFile(`# ${filename.charAt(0).toUpperCase() + filename.slice(1)}\n\n${content}`, `${filename}.md`);
+            downloadTextFile(`# Rapport de Stage - Animation périscolaire\n\n${content}`, `${filename}.md`);
             break;
     }
     
@@ -117,4 +83,22 @@ document.addEventListener('keydown', function(event) {
         event.preventDefault();
         downloadAs('markdown');
     }
+});
+
+// Smooth scroll pour les liens du sommaire
+document.addEventListener('DOMContentLoaded', function() {
+    const sommaireLinks = document.querySelectorAll('.sommaire a');
+    sommaireLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
 });
