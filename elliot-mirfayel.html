@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elliot & Mirfayel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="elliot-mirfayel.css">
+</head>
+<body>
+    <!-- Elliot Page -->
+    <div class="content-page" id="elliot-page" style="display: none;">
+        <div class="page-header">
+            <h1>Elliot</h1>
+            <div class="page-actions">
+                <button class="action-btn" onclick="returnToMain()"><i class="fa-solid fa-arrow-left"></i> Return</button>
+                <button class="action-btn" onclick="printPage()"><i class="fa-solid fa-print"></i> Imprimer</button>
+                <div class="download-dropdown">
+                    <button class="action-btn" onclick="toggleDownloadMenu()">
+                        <i class="fa-solid fa-download"></i> Download
+                    </button>
+                    <div class="download-menu" id="download-menu">
+                        <a href="#" onclick="downloadAs('pdf')">PDF</a>
+                        <a href="#" onclick="downloadAs('word')">Word (.docx)</a>
+                        <a href="#" onclick="downloadAs('latex')">LaTeX</a>
+                        <a href="#" onclick="downloadAs('markdown')">Markdown</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-content">
+            <h2>Bienvenue sur la page Elliot</h2>
+            <p>Ceci est un espace dédié à Elliot. Vous pouvez ajouter ici votre contenu personnalisé.</p>
+            <p>Les fonctionnalités disponibles :</p>
+            <ul>
+                <li>Retour au menu principal</li>
+                <li>Impression du contenu</li>
+                <li>Téléchargement dans plusieurs formats</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Mirfayel Page -->
+    <div class="content-page" id="mirfayel-page" style="display: none;">
+        <div class="page-header">
+            <h1>Mirfayel</h1>
+            <div class="page-actions">
+                <button class="action-btn" onclick="returnToMain()"><i class="fa-solid fa-arrow-left"></i> Return</button>
+                <button class="action-btn" onclick="printPage()"><i class="fa-solid fa-print"></i> Imprimer</button>
+                <div class="download-dropdown">
+                    <button class="action-btn" onclick="toggleDownloadMenu()">
+                        <i class="fa-solid fa-download"></i> Download
+                    </button>
+                    <div class="download-menu" id="download-menu">
+                        <a href="#" onclick="downloadAs('pdf')">PDF</a>
+                        <a href="#" onclick="downloadAs('word')">Word (.docx)</a>
+                        <a href="#" onclick="downloadAs('latex')">LaTeX</a>
+                        <a href="#" onclick="downloadAs('markdown')">Markdown</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-content">
+            <h2>Bienvenue sur la page Mirfayel</h2>
+            <p>Ceci est un espace dédié à Mirfayel. Vous pouvez ajouter ici votre contenu personnalisé.</p>
+            <p>Les fonctionnalités disponibles :</p>
+            <ul>
+                <li>Retour au menu principal</li>
+                <li>Impression du contenu</li>
+                <li>Téléchargement dans plusieurs formats</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="elliot-mirfayel.js"></script>
+</body>
+</html>

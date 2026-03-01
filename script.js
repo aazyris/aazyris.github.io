@@ -13,6 +13,10 @@ const menuActions = document.getElementById('menu-actions');
 const socialBtn = document.getElementById('social-btn');
 const socialLinks = document.getElementById('social-links');
 
+// --- NEW ELEMENTS ---
+const elliotBtn = document.getElementById('elliot-btn');
+const mirfayelBtn = document.getElementById('mirfayel-btn');
+
 // --- LUA ELEMENTS ---
 const luaBtn = document.getElementById('lua-btn');
 const luaConsole = document.getElementById('lua-console');
@@ -1297,6 +1301,21 @@ if (socialBtn) {
     socialBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         socialLinks.style.display = (socialLinks.style.display === 'flex') ? 'none' : 'flex';
+    });
+}
+
+// --- NEW BUTTONS FUNCTIONALITY ---
+if (elliotBtn) {
+    elliotBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        window.location.href = 'elliot-mirfayel.html?page=elliot';
+    });
+}
+
+if (mirfayelBtn) {
+    mirfayelBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        window.location.href = 'elliot-mirfayel.html?page=mirfayel';
     });
 }
 
