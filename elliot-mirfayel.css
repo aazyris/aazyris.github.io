@@ -203,11 +203,12 @@
 .section-divider img {
     max-width: 100%;
     height: auto;
-    max-height: 300px;
+    max-height: 400px;
     border-radius: 12px;
     box-shadow: 0 8px 32px rgba(0, 242, 255, 0.2);
     border: 2px solid #00f2ff;
     object-fit: cover;
+    width: 100%;
 }
 
 .divider-placeholder {
@@ -484,39 +485,133 @@
 
 /* Styles pour l'impression */
 @media print {
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
     .page-header {
-        display: none;
+        background: white !important;
+        color: black !important;
+        border-bottom: 2px solid black !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
     
     .page-content {
-        padding: 20px;
-        background: white;
-        color: black;
+        background: white !important;
+        color: black !important;
     }
     
-    .content-page {
-        position: static;
-        width: auto;
-        height: auto;
-        background: white;
-        color: black;
-    }
-    
-    .report-section {
-        background: white;
-        color: black;
-        border: 1px solid #ccc;
-        page-break-inside: avoid;
+    .report-container {
+        background: white !important;
+        color: black !important;
+        padding: 20px !important;
     }
     
     .report-title {
-        color: black;
-        border-color: black;
+        color: black !important;
+        border-color: black !important;
+        font-size: 24pt !important;
+        page-break-after: avoid;
+    }
+    
+    .report-subtitle {
+        color: black !important;
+        font-size: 18pt !important;
+    }
+    
+    .report-location {
+        color: black !important;
+        font-size: 14pt !important;
+    }
+    
+    .sommaire {
+        background: white !important;
+        border: 2px solid black !important;
+        page-break-after: always;
+        margin-bottom: 40px !important;
+    }
+    
+    .sommaire h2 {
+        color: black !important;
+        font-size: 18pt !important;
+    }
+    
+    .sommaire a {
+        color: black !important;
+    }
+    
+    .report-section {
+        background: white !important;
+        color: black !important;
+        border: none !important;
+        page-break-inside: avoid;
+        margin-bottom: 30px !important;
     }
     
     .report-section h2 {
-        color: black;
-        border-color: black;
+        color: black !important;
+        border-color: black !important;
+        font-size: 16pt !important;
+        page-break-after: avoid;
+    }
+    
+    .activities-grid, .metier-content, .journee-grid, .conclusion-content {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .activity-card, .journee-card {
+        border: 1px solid black !important;
+        page-break-inside: avoid;
+        margin-bottom: 20px !important;
+    }
+    
+    .activity-icon, .journee-icon {
+        display: none !important;
+    }
+    
+    .activity-card h3, .journee-card h3 {
+        color: black !important;
+        font-size: 14pt !important;
+    }
+    
+    .metier-missions, .metier-qualities {
+        border: 1px solid black !important;
+        border-left: 3px solid black !important;
+    }
+    
+    .metier-missions h3, .metier-qualities h3 {
+        color: black !important;
+        font-size: 14pt !important;
+    }
+    
+    .conclusion-learned {
+        background: white !important;
+        border: 1px solid black !important;
+    }
+    
+    .conclusion-learned h3 {
+        color: black !important;
+        font-size: 14pt !important;
+    }
+    
+    .remerciements {
+        color: black !important;
+        font-weight: bold !important;
+        font-style: italic !important;
+        text-align: center !important;
+        margin-top: 30px !important;
+        font-size: 14pt !important;
+    }
+    
+    .activity-objective {
+        color: black !important;
+        background: white !important;
+        border: 1px solid black !important;
+        font-style: italic !important;
+        font-size: 12pt !important;
     }
     
     .placeholder-text {
@@ -528,12 +623,51 @@
     }
     
     .section-divider {
-        margin: 20px 0;
+        margin: 30px 0 !important;
         page-break-inside: avoid;
+        page-break-after: auto;
+        page-break-before: auto;
     }
     
     .section-divider img {
-        max-height: 200px;
-        border: 1px solid #ccc;
+        max-height: 600px !important;
+        width: 100% !important;
+        border: 2px solid black !important;
+        page-break-inside: avoid;
+        display: block !important;
+        margin: 20px auto !important;
+    }
+    
+    /* Force images to take full page when possible */
+    .section-divider {
+        page-break-before: always;
+        page-break-after: always;
+    }
+    
+    /* Make sure sections start on new pages */
+    .report-section:nth-child(odd) {
+        page-break-before: always;
+    }
+    
+    /* Hide action buttons */
+    .page-actions {
+        display: none !important;
+    }
+    
+    /* Adjust margins for printing */
+    @page {
+        margin: 2cm;
+        size: A4;
+    }
+    
+    /* Ensure text is readable */
+    p, li {
+        font-size: 12pt !important;
+        line-height: 1.4 !important;
+    }
+    
+    /* Fix sommaire links */
+    .sommaire li::before {
+        color: black !important;
     }
 }
