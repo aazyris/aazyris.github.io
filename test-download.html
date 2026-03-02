@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Download</title>
+</head>
+<body>
+    <h1>Test de téléchargement</h1>
+    <button onclick="testDownload()">Télécharger PDF Mirfayel</button>
+    
+    <script>
+        function testDownload() {
+            const filename = 'mirfayel/Animation périscolaire.pdf';
+            const a = document.createElement('a');
+            a.href = filename;
+            a.download = filename.split('/').pop();
+            a.target = '_blank';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            console.log('Téléchargement lancé pour:', filename);
+        }
+    </script>
+</body>
+</html>
