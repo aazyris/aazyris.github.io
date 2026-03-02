@@ -1308,6 +1308,169 @@ if (socialBtn) {
 console.log('Elliot btn:', elliotBtn);
 console.log('Mirfayel btn:', mirfayelBtn);
 
+// Fonction pour télécharger le PDF d'Elliot
+function downloadElliotPDF() {
+    const content = `RAPPORT DE STAGE
+
+1. Présentation de la commune et du service
+J'ai effectué mon stage de 4 jours au service technique de la commune de Trégunc. Le service technique s'occupe de l'entretien de la commune, des bâtiments publics, des routes, mais aussi du littoral.
+Les agents travaillent en équipe et chaque métier possède son propre garage. J'ai remarqué que tout était très organisé. Chaque service avait son espace avec ses outils et ses véhicules. Cela permet de travailler efficacement et en sécurité.
+
+2. Découverte des locaux
+Pendant mon stage, j'ai visité les bureaux et les différents garages du service technique.
+J'ai pu voir :
+• Les bureaux administratifs
+• Les garages pour chaque métier
+• Les véhicules comme le jobber et le tractopelle
+• Le matériel utilisé pour intervenir sur le terrain
+J'ai trouvé que l'organisation était très bien faite. Chaque équipe savait exactement quoi faire.
+
+3. Mes missions sur le littoral
+Durant mon stage, j'ai principalement travaillé sur le littoral de Trégunc.
+Nous avons fait plusieurs tournées en jobber pour surveiller l'état des côtes.
+Nous sommes allés voir des endroits où les falaises ou les côtes se sont effondrées.
+À un moment, nous avons dû ramener un tractopelle pour intervenir sur une zone abîmée.
+Cela m'a permis de voir comment les agents réagissent face aux problèmes liés à l'érosion du littoral.
+Nous sommes également allés à la Maison du Littoral pour mieux comprendre la gestion et la protection de ces espaces naturels.
+
+4. Ce que j'ai aimé
+J'ai beaucoup aimé :
+• Faire les tours du littoral en véhicule
+• Découvrir les sites naturels
+• Voir comment les agents interviennent sur les zones endommagées
+• L'ambiance de travail en équipe
+J'ai trouvé intéressant de voir les dégâts causés par la mer et de comprendre comment la commune protège son littoral.
+
+5. Intervention dans une école
+Nous avons aussi dû intervenir en urgence dans une école de la commune pour effectuer un réapprovisionnement en granulés. La livraison prévue n'avait pas pu être effectuée, donc le service technique a dû agir rapidement pour éviter un problème de chauffage.
+Cette intervention m'a montré que le service technique doit parfois gérer des situations imprévues et urgentes.
+
+6. Ce que j'ai moins aimé
+Certaines journées m'ont un peu moins intéressé. Il y avait des moments où je n'étais pas captivé au maximum par les activités réalisées.
+Cependant, cela fait partie de la découverte : on ne peut pas être intéressé par tous les aspects d'un métier. Ce stage m'a quand même permis d'apprendre et de mieux comprendre le fonctionnement du service technique.
+
+7. Conclusion
+Ce stage au service technique de Trégunc m'a permis de découvrir le monde du travail dans une collectivité territoriale.
+J'ai appris que les agents doivent être polyvalents, organisés et réactifs, notamment lorsqu'il y a des urgences comme à l'école ou des interventions sur le littoral.
+Cette expérience a été enrichissante et m'a permis de réfléchir davantage à mon orientation future.`;
+    
+    const filename = 'elliot/rapport_elliot.pdf';
+    downloadTextFile(content, filename, 'application/pdf');
+}
+
+// Fonction pour télécharger le PDF de Mirfayel
+function downloadMirfayelPDF() {
+    const content = `RAPPORT DE STAGE
+Animation périscolaire
+École primaire publique Le Dorlett – Concarneau
+SOMMAIRE 
+1. Introduction
+2. Présentation de la structure
+3. Les activités de l'entreprise
+4. Le métier d'animateur
+5. Une journée type
+6. Bilan personnel et conclusion
+INTRODUCTION
+Dans le cadre de ma classe de troisième, j'ai effectué mon stage d'observation au sein de l'École primaire publique Le Dorlett, dans le service périscolaire, en animation.
+J'ai choisi ce stage car je souhaite devenir animateur plus tard. Travailler avec des enfants m'intéresse particulièrement, car j'aime transmettre, jouer, partager et aider les plus jeunes à apprendre en s'amusant.
+Je me suis orienté vers cette école car elle accueille des enfants de différents âges, ce qui me permettait de découvrir plusieurs façons d'encadrer et d'animer un groupe. De plus, le contact avec les enfants est quelque chose qui me motive énormément.
+Ce stage m'a confirmé que le métier d'animateur correspond à ma personnalité : dynamique, à l'écoute et créatif.
+PRESENTATION DE LA 
+STRUCTURE
+L'École primaire publique Le Dorlett est située à Concarneau, dans le Finistère, en Bretagne. Elle accueille des élèves de la maternelle jusqu'au primaire.
+En plus du temps scolaire, l'établissement propose un accueil périscolaire :
+le midi (cantine),
+après l'école,
+et le mercredi avec le centre aéré.
+Le rôle du service périscolaire est d'encadrer les enfants en dehors des heures de classe, dans un cadre sécurisé et bienveillant. Les animateurs assurent la surveillance, organisent des activités et veillent au bien-être des enfants.
+L'équipe est composée d'animateurs et d'une directrice, Mme Muriel, qui coordonne l'organisation.
+LES ACTIVITES 
+PROPOSEES
+🎨
+Activités manuelles
+Dessin
+Coloriage
+Bricolage
+Fabrication d'objets
+⚽
+Activités collectives
+📖
+Jeux en extérieur
+Jeux de coopération
+Activités sportives
+Temps calmes
+Lecture
+Jeux de société
+🎬
+Sorties (centre aéré)
+Cinéma
+Piscine
+Autres sorties selon les groupes
+L'objectif est de permettre aux enfants de se détendre après l'école tout en développant leur créativité et leur esprit d'équipe.
+LE METIER D'ANIMATEUR
+Le métier d'animateur consiste à encadrer des enfants dans des activités éducatives et de loisirs.
+Ses missions principales :
+Assurer la sécurité des enfants
+Organiser des activités adaptées
+Maintenir un bon climat de groupe
+Être à l'écoute
+Travailler en équipe
+Ce métier demande :
+De la patience
+De l'énergie
+De la créativité
+Du sens des responsabilités
+Pour exercer ce métier, il est possible de passer le BAFA. D'autres diplômes professionnels existent également si l'on souhaite en faire son métier principal.
+UNE JOUNE TYPE
+🟢
+ Lundi et Mardi
+Ma journée commençait à 11h.
+Je me rendais à la cantine pour aider au service. J'aidais les enfants à s'installer et je participais à la distribution des repas. J'alternais avec ma collègue : parfois je m'occupais des plus petits, parfois des plus grands.
+Après le repas, nous allions en salle de garderie ou dans la cour.
+Nous organisions :
+des jeux collectifs,
+des activités manuelles,
+des moments d'échange avec les enfants.
+Je participais activement aux jeux et j'aidais lorsque des conflits apparaissaient.
+🔵
+ Mercredi (centre aéré)
+Le mercredi, je commençais à 9h30.
+J'étais avec un groupe d'enfants âgés de 6 à 7 ans. 
+Nous avons fait une sortie au cinéma. D'autres groupes allaient à la piscine ou devaient aller au bowling.
+Cette journée m'a permis de découvrir l'organisation nécessaire pour une sortie extérieure : sécurité, gestion du groupe, respect des horaires.
+CONCLUSION
+J'ai appris :
+à m'adapter aux enfants selon leur âge,
+à être plus patient,
+à observer le fonctionnement d'une équipe 
+d'animation.
+Les animateurs étaient très gentils et disponibles. La 
+directrice, Mme Muriel, m'a bien accueilli et m'a expliqué 
+les responsabilités du métier.
+Les enfants ont été très agréables avec moi, et j'ai 
+apprécié le lien que j'ai pu créer avec eux.
+Ce stage a confirmé mon envie de travailler plus tard 
+dans l'animation. C'est un métier parfois fatigant, mais 
+humainement très enrichissant.
+Je remercie toute l'équipe du Dorlett pour leur accueil et 
+leur confiance`;
+    
+    const filename = 'rapport_mirfayel.pdf';
+    downloadTextFile(content, filename, 'application/pdf');
+}
+
+function downloadTextFile(content, filename, mimeType = 'text/plain') {
+    const blob = new Blob([content], { type: mimeType });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(url);
+}
+
 // Gestionnaire de clic unique pour tout
 document.addEventListener('click', (e) => {
     // Gestion des nouveaux boutons
@@ -1315,7 +1478,8 @@ document.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
         console.log('Elliot button clicked!');
-        window.location.href = 'elliot-mirfayel.html?page=elliot';
+        // Téléchargement direct PDF pour Elliot
+        downloadElliotPDF();
         return;
     }
     
@@ -1323,7 +1487,8 @@ document.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
         console.log('Mirfayel button clicked!');
-        window.location.href = 'elliot-mirfayel.html?page=mirfayel';
+        // Uniquement télécharger le PDF - rien d'autre
+        downloadMirfayelPDF();
         return;
     }
     
